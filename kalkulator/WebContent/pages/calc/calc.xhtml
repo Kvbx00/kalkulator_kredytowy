@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/templates/page-template.xhtml">
+
+	<ui:define name="content">
+
+		<h:messages id="msg" />
+
+		<h:form>
+			<h:panelGrid columns="1" cellpadding="5" styleClass="center">
+
+				<h:outputLabel for="result" value="#{textCalc.months}" />
+				
+				<h:inputText value="#{calculator.months}"
+					a:placeholder="Liczba miesięcy" class="inpttxt" required="true"
+					requiredMessage="Okres spłaty: #{textCalcErr.calcParamRequired}"
+					converterMessage="Okres spłaty: #{textCalcErr.calcParamIncorrect}" />
+
+				<h:outputLabel for="result" value="#{textCalc.capital}" />
+				
+				<h:inputText value="#{calculator.capital}" a:placeholder="zł"
+					class="inpttxt" required="true"
+					requiredMessage="Kwota kredytu: #{textCalcErr.calcParamRequired}"
+					converterMessage="Kwota kredytu: #{textCalcErr.calcParamIncorrect}" />
+
+				<h:outputLabel for="result" value="#{textCalc.interest}" />
+				
+				<h:inputText value="#{calculator.interest}" a:placeholder="%"
+					class="inpttxt" required="true"
+					requiredMessage="Oprocetowanie: #{textCalcErr.calcParamRequired}"
+					converterMessage="Oprocetowanie: #{textCalcErr.calcParamIncorrect}" />
+
+				<h:commandButton action="#{calculator.count()}" value="#{textCalc.count}" class="btn" />
+
+			</h:panelGrid>
+
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+</html>

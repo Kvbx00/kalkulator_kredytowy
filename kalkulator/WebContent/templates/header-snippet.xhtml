@@ -6,5 +6,10 @@
 
 		<div class="head">Kalkulator kredytowy</div>
 
+	<h:outputText
+		value="Zalogowany: #{remoteClient.details.name} #{remoteClient.details.surname}" />
+	<h:form style="display:inline;">
+		<h:commandButton value="Wyloguj" action="#{login.doLogout()}" />
+	</h:form>
 
 </ui:composition>

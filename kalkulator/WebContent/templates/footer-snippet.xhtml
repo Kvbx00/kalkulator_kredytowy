@@ -2,7 +2,14 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
-	
-	
+
+	<h:form>
+		<h:commandLink action="/pages/calc/calc?faces-redirect=true"
+			value="strona kalkulatora" /> | 
+		<h:commandLink action="/pages/manager/page?faces-redirect=true"
+			value="strona managera" /> | 
+		<h:commandLink action="/pages/admin/page?faces-redirect=true"
+			value="strona administratora" />
+	</h:form>
 
 </ui:composition>
